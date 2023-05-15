@@ -1,0 +1,5 @@
+Alessandro	Zappatore	19	M	141000.00
+MariGrazia	Zappatore	23	F	212121.00
+Ada	Bianchi	90	F	2131321.00
+Mario	Rossi	32	M	321122.32
+Pasquale	Gialli	43	M	2131312.00
