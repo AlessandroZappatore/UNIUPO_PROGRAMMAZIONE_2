@@ -12,7 +12,7 @@ int media_it(Nodo* head, int k){
     return media;
 }
 
-/*CIAO Scrivere una funzione ricorsiva che prenda in input una lista e un intero k positivo e che cancelli dalla lista tutti
+/*Scrivere una funzione ricorsiva che prenda in input una lista e un intero k positivo e che cancelli dalla lista tutti
 i nodi a valore k, solo se sono in una posizione pari. Si analizzi e motivi la complessità in spazio e in tempo.
 Es: 5->3->7->1->3->NULL k = 3 Risultato 5->7->1->3->NULL*/
                                       //p=0;  
