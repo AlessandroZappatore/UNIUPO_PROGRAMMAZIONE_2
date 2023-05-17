@@ -70,11 +70,11 @@ int main()
     scanf("%d", &k);
     headlist=cancella_k_rc(headlist, k, 0);
     visualizza_lista(headlist);*/
-    int x;
+    /*int x;
     printf("Inserire x: ");
     scanf("%d", &x);
     delx(&headlist, x);
-    visualizza_lista(headlist);
+    visualizza_lista(headlist);*/
     return 0;
 }
 

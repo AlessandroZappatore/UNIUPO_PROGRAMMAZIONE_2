@@ -21,6 +21,6 @@ Nodo *elimina_dispari(Nodo *head);
 Nodo *nuova_lista(Nodo *head, Nodo *newhead, int x);
 Nodo* newnode(void);
 Nodo* cancella_k_rc(Nodo* head, int k, int p);
-void delx(Nodo **head, int x);
+//void delx(Nodo **head, int x);
 
 #endif

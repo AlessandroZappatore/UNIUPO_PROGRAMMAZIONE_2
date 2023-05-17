@@ -185,7 +185,7 @@ Nodo *cancella_k_rc(Nodo *head, int k, int p)
     return head;
 }
 
-void delx(Nodo **head, int x){
+/*void delx(Nodo **head, int x){
     Nodo* p;
     if(*head!=NULL){
         if((*head)->data==x){
@@ -196,4 +196,4 @@ void delx(Nodo **head, int x){
         }
         delx((*head)->next, x);
     }
-}
+}*/
