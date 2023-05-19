@@ -113,5 +113,18 @@ int main()
 
     struct nodo* headdup=list_duplicate(headlist1);
     print_list(headdup);
+
+    struct nodo* temp=NULL;
+    while(headlist1!=NULL){
+        temp=headlist1->next;
+        free(headlist1);
+        headlist1=temp;
+    }
+
+    while(headlist2!=NULL){
+        temp=headlist2->next;
+        free(headlist1);
+        headlist2=temp;
+    }
     return 0;
 }
