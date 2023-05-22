@@ -23,5 +23,6 @@ struct nodo{
 
 int main(){
 
+    printf("TEST\n");
     return 0;
 }
