@@ -8,16 +8,14 @@ struct nodo{
 
 struct nodo* build_list(int v[]);
 void print_list(struct nodo* head);
-void delete_in_rc(struct nodo* head, int k, int i);
-void delete_fr_rc(struct nodo** head);
-void delete_node(struct nodo** head, int k);
+void delete_fr_rc(struct nodo** head, int k, int i);
 
 int main(){
     int v[]={11,1,3,9,7,1,4,-1};
     struct nodo* headlist=build_list(v);
     print_list(headlist);
 
-    delete_node(&headlist, 1);
+    delete_fr_rc(&headlist, 1, 1);
     print_list(headlist);
     return 0;
 }
@@ -52,36 +50,18 @@ void print_list(struct nodo* head){
     print_list(head->next);
 }
 
-void delete_in_rc(struct nodo* head, int k, int i){
-   if(head!=NULL){
-    if(head->next!=NULL){
-        if(i+1==k){
-            struct nodo* tmp=head->next;
-            head->next=head->next->next;
-            free(tmp);
-            return;
-        }
-        else
-            delete_in_rc(head->next, k, i+1);
-    }
-   }
-}
-
-void delete_fr_rc(struct nodo** head){
+void delete_fr_rc(struct nodo** head, int k, int i){
     struct nodo* tmp=NULL;
     if(*head!=NULL){
+        if(i==k){
         tmp=*head;
         *head=(*head)->next;
         free(tmp);
         return;
+        }
+        delete_fr_rc(&(*head)->next, k, i+1);
     }
 }
 
-void delete_node(struct nodo** head, int k){
-    if(k==1)
-        delete_fr_rc(head);
-    else
-        delete_in_rc(*head, k, 0);
-}
 
 
