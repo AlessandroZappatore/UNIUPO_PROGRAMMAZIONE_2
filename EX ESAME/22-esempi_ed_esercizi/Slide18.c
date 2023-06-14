@@ -8,7 +8,7 @@ struct nodo{
 
 struct nodo* build_list(int v[]);
 void print_list(struct nodo* head);
-int conta3(struct nodo* head);
+int conta3(struct nodo* head, int x);
 void duplicate(struct nodo* head, int x, int n);
 
 int main(){
@@ -16,7 +16,7 @@ int main(){
     struct nodo* headlist=build_list(v);
     print_list(headlist);
 
-    printf("I valori che si ripetono per tre volte sono: %d\n", conta3(headlist));
+    printf("I valori che si ripetono per tre volte sono: %d\n", conta3(headlist, 5));
 
     duplicate(headlist, 1, 3);
     print_list(headlist);
@@ -53,11 +53,11 @@ void print_list(struct nodo* head){
     print_list(head->next);
 }
 
-int conta3(struct nodo* head){
+int conta3(struct nodo* head, int x){
     int c=0;
 
     while(head->next->next!=NULL){
-        if(head->data==head->next->data&&head->data==head->next->next->data)
+        if(head->data==x&&head->data==head->next->data&&head->data==head->next->next->data)
             c++;
         head=head->next;
     }
