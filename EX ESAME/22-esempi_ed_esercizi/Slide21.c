@@ -9,6 +9,7 @@ struct nodo{
 struct nodo* build_list(int v[]);
 void print_list(struct nodo* head);
 void delete_mul(struct nodo** lis1, struct nodo* lis2, int n);
+int max_len(struct nodo* head);
 
 int main(){
     int v1[]={4,5,11,3,4,8,7,-1};
@@ -23,6 +24,12 @@ int main(){
     delete_mul(&headlist1, headlist2, 2);
     printf("L3: ");
     print_list(headlist1);
+
+    int v3[]={1,2,2,3,3,3,4,5,2,2,-1};
+    struct nodo* healist3=build_list(v3);
+    printf("L4: ");
+    print_list(healist3);
+    printf("La lunghezza massima di valori uguali vale: %d\n", max_len(healist3));
     return 0;
 }
 
@@ -88,4 +95,21 @@ void delete_mul(struct nodo** lis1, struct nodo* lis2, int n) {
             current1 = current1->next;
         }
     }
+}
+
+int max_len(struct nodo* head){
+    int max=0, c=1;
+
+    while(head->next!=NULL){
+        if(head->data==head->next->data){
+            c++;
+        }
+        else{
+            if(c>max)
+                max=c;
+            c=1;
+        }
+        head=head->next;
+    }
+    return max;
 }
