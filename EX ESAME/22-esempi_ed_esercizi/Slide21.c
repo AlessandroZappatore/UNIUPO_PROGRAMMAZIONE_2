@@ -11,7 +11,7 @@ void print_list(struct nodo* head);
 void delete_mul(struct nodo** lis1, struct nodo* lis2, int n);
 
 int main(){
-    int v1[]={4,4,11,3,4,8,7,-1};
+    int v1[]={4,5,11,3,4,8,7,-1};
     struct nodo* headlist1=build_list(v1);
     printf("L1: ");
     print_list(headlist1);
@@ -63,14 +63,13 @@ void delete_mul(struct nodo** lis1, struct nodo* lis2, int n) {
     }
     
     struct nodo* current1 = *lis1;
-    struct nodo* current2 = lis2;
     struct nodo* prev = NULL;
     
     while (current1 != NULL) {
         int sum;
-        if (current2 != NULL) {
-            sum = current1->data + current2->data;
-            current2 = current2->next;
+        if (lis2 != NULL) {
+            sum = current1->data + lis2->data;
+            lis2 = lis2->next;
         } else {
             sum = current1->data;
         }
