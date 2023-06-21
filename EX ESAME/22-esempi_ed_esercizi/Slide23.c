@@ -10,13 +10,15 @@ struct nodo* build_list(int v[], int i);
 void print_list(struct nodo* head);
 int uguali(struct nodo* L1, struct nodo* L2);
 struct nodo* new_list(struct nodo* L1, struct nodo* L2, int i);
+struct nodo* new_list2(struct nodo* L1, struct nodo* L2, int i);
+
 
 int main(){
-    int v[]={3,4,3,7,8,6,1,-1};
+    int v[]={3,4,2,7,5,6,11,16,7,2,-1};
     struct nodo* L1=build_list(v, 0);
     printf("L1: ");
     print_list(L1);
-    int v1[]={1,4,2,7,2,12,2,16,7,2,-1};
+    int v1[]={0,2,2,6,2,12,2,-1};
     struct nodo* L2=build_list(v1, 0);
     printf("L2: ");
     print_list(L2);
@@ -25,6 +27,10 @@ int main(){
     struct nodo* L3=new_list(L1, L2, 1);
     printf("L3: ");
     print_list(L3);
+
+    struct nodo* L4=new_list2(L1, L2, 1);
+    printf("L4: ");
+    print_list(L4);
     return 0;
 }
 
@@ -73,4 +79,20 @@ struct nodo* new_list(struct nodo* L1, struct nodo* L2, int i){
     }
     else
         return new_list(L1->next, L2->next, i+1);
+}
+
+struct nodo* new_list2(struct nodo* L1, struct nodo* L2, int i){
+    struct nodo* tmp=NULL;
+
+    if(L1==NULL||L2==NULL)
+        return NULL;
+
+    if((L1->data+L2->data)%i==0){
+        tmp=(struct nodo*)malloc(sizeof(struct nodo));
+        tmp->data=L1->data*L2->data;
+        tmp->next=new_list2(L1->next, L2->next, i+1);
+        return tmp;
+    }
+    else
+        return new_list2(L1->next, L2->next, i+1);
 }
