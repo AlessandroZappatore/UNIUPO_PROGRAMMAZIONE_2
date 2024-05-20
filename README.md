@@ -1,2 +1,2 @@
-# PROGRAMMAZIONE_2
-Esercizi dell'esame di Programmazione 2 UniUpo
+Corso di PROGRAMMAZIONE 2 anno accademico 2022/23 presso l'Università del Piemonte Orientale. Esercizi disponibili sulle slide del corso.
+
