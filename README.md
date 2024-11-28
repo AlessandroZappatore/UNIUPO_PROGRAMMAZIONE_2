@@ -5,6 +5,8 @@
 Corso di **Programmazione 2** — Anno Accademico 2022/23 (Secondo Semestre) presso l'**Università del Piemonte Orientale**.  
 Questo repository contiene esercizi svolti e materiali relativi al programma ufficiale del corso. 🎓
 
+La parte teorica del corso con i miei appunti è disponibile nel repository [UNIUPO Appunti](https://github.com/AlessandroZappatore/UNIUPO_APPUNTI/tree/0aa64fff66bb10768d1e4fb72abba83051e06883/PRIMO%20ANNO/Programmazione_2).
+
 ---
 
 ## 📘 **Programma del Corso**  
